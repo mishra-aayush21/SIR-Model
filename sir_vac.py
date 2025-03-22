@@ -1,14 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import random
-from tqdm import tqdm  # For progress bars
+from tqdm import tqdm 
 
 # Agent class
 class Agent:
     def __init__(self, agent_id, strategy='L'):
         self.id = agent_id
-        self.state = 'S'  # S, I, R, V
-        self.strategy = strategy  # 'V' for vaccinate, 'L' for loner
+        self.state = 'S'
+        self.strategy = strategy  
 
 # Simulation class
 class SIRSimulation:
@@ -51,10 +51,10 @@ class SIRSimulation:
             for i in range(grid_size):
                 for j in range(grid_size):
                     neighbors = []
-                    if i > 0: neighbors.append((i-1)*grid_size + j)  # Left neighbor
-                    if i < grid_size-1: neighbors.append((i+1)*grid_size + j)  # Right neighbor
-                    if j > 0: neighbors.append(i*grid_size + (j-1))  # Top neighbor
-                    if j < grid_size-1: neighbors.append(i*grid_size + (j+1))  # Bottom neighbor
+                    if i > 0: neighbors.append((i-1)*grid_size + j)  
+                    if i < grid_size-1: neighbors.append((i+1)*grid_size + j)  
+                    if j > 0: neighbors.append(i*grid_size + (j-1)) 
+                    if j < grid_size-1: neighbors.append(i*grid_size + (j+1)) 
                     self.network[i*grid_size + j] = neighbors
         else:
             raise ValueError("Invalid topology. Choose 'all' or 'lattice'.")
