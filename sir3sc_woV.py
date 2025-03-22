@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import random
-from tqdm import tqdm  # For progress bars
+from tqdm import tqdm  
 
 # Agent class
 class Agent:
@@ -39,10 +39,10 @@ class SIRSimulation:
             for i in range(grid_size):
                 for j in range(grid_size):
                     neighbors = []
-                    if i > 0: neighbors.append((i-1)*grid_size + j)  # Left neighbor
-                    if i < grid_size-1: neighbors.append((i+1)*grid_size + j)  # Right neighbor
-                    if j > 0: neighbors.append(i*grid_size + (j-1))  # Top neighbor
-                    if j < grid_size-1: neighbors.append(i*grid_size + (j+1))  # Bottom neighbor
+                    if i > 0: neighbors.append((i-1)*grid_size + j)  
+                    if i < grid_size-1: neighbors.append((i+1)*grid_size + j) 
+                    if j > 0: neighbors.append(i*grid_size + (j-1)) 
+                    if j < grid_size-1: neighbors.append(i*grid_size + (j+1))  
                     self.network[i*grid_size + j] = neighbors
         else:
             raise ValueError("Invalid topology. Choose 'all' or 'lattice'.")
@@ -78,14 +78,14 @@ class SIRSimulation:
 
 # Run simulations for different beta and gamma values
 def run_scenarios(N=100, topology='all', num_runs=10):
-    # Define 3 scenarios: (beta, gamma)
+    
     scenarios = [
-        (0.4, 0.1),  # Low infection rate, low recovery rate
-        (0.6, 0.2),  # Medium infection rate, medium recovery rate
-        (0.8, 0.3),  # High infection rate, high recovery rate
+        (0.4, 0.1),  
+        (0.6, 0.2),  
+        (0.8, 0.3),  
     ]
 
-    # Store results for each scenario
+    
     results = {}
 
     for beta, gamma in scenarios:
