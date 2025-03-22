@@ -141,7 +141,7 @@ class SIRSimulation:
             text_i = font.render(f"I: {counts['I']}", True, (255, 255, 255))
             text_r = font.render(f"R: {counts['R']}", True, (255, 255, 255))
             text_v = font.render(f"V: {counts['V']}", True, (255, 255, 255))
-            screen.blit(text_s, (10, 10))  # Top-left corner
+            screen.blit(text_s, (10, 10))  
             screen.blit(text_i, (10, 40))
             screen.blit(text_r, (10, 70))
             screen.blit(text_v, (10, 100))
